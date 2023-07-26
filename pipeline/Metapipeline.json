@@ -92,7 +92,21 @@
 							"inputs": [
 								{
 									"referenceName": "parameterdataset2",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_container": {
+											"value": "@pipeline().parameters.pp_container",
+											"type": "Expression"
+										},
+										"ds_input": {
+											"value": "@pipeline().parameters.pp_directory",
+											"type": "Expression"
+										},
+										"ds_filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
