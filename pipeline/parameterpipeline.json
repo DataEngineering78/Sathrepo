@@ -150,7 +150,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.pp_layerin",
+								"value": "@pipeline().parameters.pp_layerout",
 								"type": "Expression"
 							},
 							"ds_filename": {
@@ -170,7 +170,7 @@
 								"type": "Expression"
 							},
 							"ds_directory": {
-								"value": "@pipeline().parameters.pp_layerout",
+								"value": "@pipeline().parameters.pp_layer_silver",
 								"type": "Expression"
 							},
 							"ds_filename": {
