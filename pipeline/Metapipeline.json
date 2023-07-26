@@ -29,7 +29,15 @@
 							}
 						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems",
+						"columnCount",
+						"contentMD5",
+						"exists",
+						"structure",
+						"itemName",
+						"itemType"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
