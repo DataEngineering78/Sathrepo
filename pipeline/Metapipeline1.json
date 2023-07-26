@@ -1,6 +1,14 @@
 {
 	"name": "Metapipeline1",
 	"properties": {
+		"parameters": {
+			"pp_container": {
+				"type": "string"
+			},
+			"pp_directory": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
