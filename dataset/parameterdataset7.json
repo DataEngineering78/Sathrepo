@@ -21,18 +21,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().ds_filename",
-					"type": "Expression"
-				},
-				"folderPath": {
-					"value": "@dataset().ds_directory",
-					"type": "Expression"
-				},
-				"fileSystem": {
-					"value": "@dataset().ds_container",
-					"type": "Expression"
-				}
+				"folderPath": "stagging",
+				"fileSystem": "container1"
 			},
 			"columnDelimiter": "\t",
 			"escapeChar": "\\",
