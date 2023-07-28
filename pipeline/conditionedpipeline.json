@@ -248,8 +248,8 @@
 				}
 			},
 			{
-				"name": "check the file",
-				"type": "IfCondition",
+				"name": "ForEach2",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "Get Metadata1",
@@ -260,10 +260,11 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"expression": {
+					"items": {
 						"value": "@activity('Get Metadata1').output.childItems",
 						"type": "Expression"
-					}
+					},
+					"isSequential": true
 				}
 			}
 		],
