@@ -114,19 +114,58 @@
 													"type": "DelimitedTextReadSettings"
 												}
 											},
-											"enableStaging": false
+											"sink": {
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
 										},
 										"inputs": [
 											{
-												"referenceName": "parameterdataset8",
+												"referenceName": "conditioneddataset1",
 												"type": "DatasetReference",
 												"parameters": {
+													"ds_input": {
+														"value": "@pipeline().parameters.pp_directory",
+														"type": "Expression"
+													},
 													"ds_container": {
 														"value": "@pipeline().parameters.pp_container",
 														"type": "Expression"
 													},
+													"ds_filename": {
+														"value": "@activity('Get Metadata1').output.childItems",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "conditioneddataset1",
+												"type": "DatasetReference",
+												"parameters": {
 													"ds_input": {
-														"value": "@pipeline().parameters.pp_directory",
+														"value": "@pipeline().parameters.pp_output_directory",
+														"type": "Expression"
+													},
+													"ds_container": {
+														"value": "@pipeline().parameters.pp_container",
 														"type": "Expression"
 													},
 													"ds_filename": {
@@ -152,6 +191,9 @@
 				"type": "string"
 			},
 			"pp_filename": {
+				"type": "string"
+			},
+			"pp_output_directory": {
 				"type": "string"
 			}
 		},
