@@ -49,7 +49,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Filter1",
+						"activity": "Get Metadata1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -57,10 +57,6 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@activity('Filter1').output.Value",
-						"type": "Expression"
-					},
 					"isSequential": true,
 					"activities": [
 						{
@@ -221,7 +217,7 @@
 														"type": "Expression"
 													},
 													"ds_filename": {
-														"value": "@activity('Filter1').output.Value",
+														"value": "@activity('Get Metadata1').output.childItems",
 														"type": "Expression"
 													}
 												}
@@ -259,7 +255,7 @@
 				"type": "Filter",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata1",
+						"activity": "copy the file",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -276,6 +272,19 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Filter1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"parameters": {
