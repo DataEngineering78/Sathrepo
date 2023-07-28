@@ -45,32 +45,9 @@
 				}
 			},
 			{
-				"name": "condition to move the file",
-				"type": "Filter",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Get Metadata1').output.childItems",
-						"type": "Expression"
-					},
-					"condition": {
-						"value": "@endswith(item().name,'txt')",
-						"type": "Expression"
-					}
-				}
-			},
-			{
 				"name": "ForEach1",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -269,6 +246,25 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "check the file",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@activity('Get Metadata1').output.childItems",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -276,9 +272,6 @@
 				"type": "string"
 			},
 			"pp_directory": {
-				"type": "string"
-			},
-			"pp_filename": {
 				"type": "string"
 			},
 			"pp_output_directory": {
