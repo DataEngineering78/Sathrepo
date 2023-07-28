@@ -91,7 +91,7 @@
 								},
 								"ifFalseActivities": [
 									{
-										"name": "false copy data",
+										"name": "false copydata",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
