@@ -179,7 +179,7 @@
 								],
 								"ifTrueActivities": [
 									{
-										"name": "Copy data1",
+										"name": "true copydata",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
