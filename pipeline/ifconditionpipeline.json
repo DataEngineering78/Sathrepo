@@ -63,7 +63,21 @@
 						"value": "@activity('Metadata of 2 files').output.childItems",
 						"type": "Expression"
 					},
-					"isSequential": true
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "validate the type of file",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@endswith(item().name,'txt')",
+									"type": "Expression"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
