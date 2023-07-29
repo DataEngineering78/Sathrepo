@@ -139,10 +139,6 @@
 										"ds_directory": {
 											"value": "@pipeline().parameters.pp_directory",
 											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@activity('Metadata of 2 files').output.childItems",
-											"type": "Expression"
 										}
 									}
 								}
