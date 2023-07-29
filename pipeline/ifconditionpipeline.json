@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "Metadata of 2 files",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -44,6 +44,26 @@
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
 					}
+				}
+			},
+			{
+				"name": "getting the file from MD",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Metadata of 2 files",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Metadata of 2 files').output.childItems",
+						"type": "Expression"
+					},
+					"isSequential": true
 				}
 			}
 		],
