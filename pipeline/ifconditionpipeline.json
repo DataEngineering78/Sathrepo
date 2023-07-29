@@ -47,8 +47,8 @@
 				}
 			},
 			{
-				"name": "getting the file from MD",
-				"type": "ForEach",
+				"name": "file check",
+				"type": "IfCondition",
 				"dependsOn": [
 					{
 						"activity": "Metadata of 2 files",
@@ -59,23 +59,61 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"items": {
-						"value": "@activity('Metadata of 2 files').output.childItems",
+					"expression": {
+						"value": "@endswith(activity('Metadata of 2 files').output.childItems,'txt')",
 						"type": "Expression"
 					},
-					"isSequential": true,
-					"activities": [
+					"ifFalseActivities": [
 						{
-							"name": "validate the type of file",
-							"type": "IfCondition",
+							"name": "Copy data2",
+							"type": "Copy",
 							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
 							"userProperties": [],
 							"typeProperties": {
-								"expression": {
-									"value": "@endswith(item().name,'txt')",
-									"type": "Expression"
-								}
+								"enableStaging": false
 							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "textfile",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ifconditiondataset3",
+									"type": "DatasetReference"
+								}
+							]
 						}
 					]
 				}
