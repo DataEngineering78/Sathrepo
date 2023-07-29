@@ -234,6 +234,9 @@
 			},
 			"pp_directory": {
 				"type": "string"
+			},
+			"pp_filename": {
+				"type": "string"
 			}
 		},
 		"annotations": []
