@@ -60,7 +60,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(activity('Metadata of 2 files').output.exists,true)",
+						"value": "@activity('Metadata of 2 files').output.childItems",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
