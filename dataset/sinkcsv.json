@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "csv_sltp.csv",
+				"fileName": "red_csv_sltp.csv",
 				"folderPath": "csvfile",
 				"fileSystem": "container3"
 			},
