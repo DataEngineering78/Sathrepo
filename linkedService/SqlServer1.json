@@ -6,7 +6,7 @@
 		"type": "SqlServer",
 		"typeProperties": {
 			"connectionString": "integrated security=False;data source=satheeshserver.database.windows.net;initial catalog=ADF;user id=satheesh787",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEQwRUNERjIwLUI4NUItNDUwMC1BQUM4LUZEMkVGQTlCRjY2Q19iYTZhMTQ0Yy0wZDM0LTQ4YzgtYTRhYy00NDQ2N2Q1Mzg0Y2QiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEI3RjIwNzk5LUMwQUQtNENERi05NTI5LUVGNkZBOUM0Qjc2Ql8xM2U5N2YyOS00M2E0LTQ2OTUtYjEzOC1mYjI4NTY4MTc0YjQiDQp9"
 		}
 	}
 }
