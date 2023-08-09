@@ -125,7 +125,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "pp_raw_dataset",
+						"referenceName": "pp_project_sink_dataset",
 						"type": "DatasetReference"
 					}
 				]
