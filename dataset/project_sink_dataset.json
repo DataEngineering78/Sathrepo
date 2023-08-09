@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "ADB_Inputfile",
+				"folderPath": "Output",
 				"fileSystem": "container3"
 			},
 			"columnDelimiter": "\t",
