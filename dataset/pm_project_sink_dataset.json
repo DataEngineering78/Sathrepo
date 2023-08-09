@@ -13,7 +13,7 @@
 				"folderPath": "ADB_Inputfile",
 				"fileSystem": "container3"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
