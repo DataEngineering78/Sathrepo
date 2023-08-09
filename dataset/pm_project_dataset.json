@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "data_8986007d-22ae-48f8-ad93-be1166dee1d9_b6c94946-fe8f-4398-a3e2-0c251d73b14e.txt",
-				"folderPath": "unzipfile_output",
+				"fileName": "SalesLTProduct.txt",
+				"folderPath": "unzipfile_output/AdventureWorksLT2012-20230801T111855Z-001.zip/AdventureWorksLT2012",
 				"fileSystem": "container3"
 			},
 			"columnDelimiter": "\t",
