@@ -100,7 +100,18 @@
 				"inputs": [
 					{
 						"referenceName": "pp_raw_dataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_container": {
+								"value": "@pipeline().parameters.pp_container",
+								"type": "Expression"
+							},
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_directory",
+								"type": "Expression"
+							},
+							"ds_filename": "  "
+						}
 					}
 				]
 			}
