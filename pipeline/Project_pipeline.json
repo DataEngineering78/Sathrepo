@@ -33,7 +33,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "project_dataset",
+						"referenceName": "project_src_dataset",
 						"type": "DatasetReference"
 					}
 				]

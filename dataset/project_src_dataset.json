@@ -1,5 +1,5 @@
 {
-	"name": "project_dataset",
+	"name": "project_src_dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage15",
