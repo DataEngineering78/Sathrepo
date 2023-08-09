@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Output",
+				"folderPath": "unzipfile_output",
 				"fileSystem": "container3"
 			},
 			"columnDelimiter": "\t",
