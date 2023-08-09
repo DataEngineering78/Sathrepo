@@ -18,10 +18,16 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Output",
-				"fileSystem": "container3"
+				"folderPath": {
+					"value": "@dataset().ds_directory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().ds_container",
+					"type": "Expression"
+				}
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
