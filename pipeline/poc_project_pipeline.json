@@ -86,11 +86,11 @@
 					"notebookPath": "/Users/dataengineering78@outlook.com/poc project",
 					"baseParameters": {
 						"get the file": {
-							"value": "@activity('Unzip the file').output",
+							"value": "@pipeline().parameters.input_file",
 							"type": "Expression"
 						},
 						"put the file": {
-							"value": "@pipeline().parameters.file_name",
+							"value": "@pipeline().parameters.output_file",
 							"type": "Expression"
 						}
 					}
@@ -102,7 +102,10 @@
 			}
 		],
 		"parameters": {
-			"file_name": {
+			"input_file": {
+				"type": "string"
+			},
+			"output_file": {
 				"type": "string"
 			}
 		},
