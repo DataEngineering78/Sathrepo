@@ -10,10 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Unzip_output/AdventureWorksLT2012-20230801T111855Z-001.zip/AdventureWorksLT2012",
+				"folderPath": "Unzip_output/AdventureWorksLT2012-20230801T111855Z-001.zip",
 				"fileSystem": "container3"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
