@@ -74,8 +74,14 @@
 				]
 			},
 			{
-				"name": "get all the files",
-				"type": "GetMetadata",
+				"name": "checking the file",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": []
+			},
+			{
+				"name": "copy the file to raw layer",
+				"type": "Copy",
 				"dependsOn": [
 					{
 						"activity": "unzip the file",
@@ -93,41 +99,25 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "get_prjct_dataset1",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_container": {
-								"value": "@pipeline().parameters.pp_container",
-								"type": "Expression"
-							},
-							"ds_directory": {
-								"value": "@pipeline().parameters.pp_directory",
-								"type": "Expression"
-							},
-							"ds_filename": "  "
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"fieldList": [
-						"childItems",
-						"itemName",
-						"itemType"
-					],
-					"storeSettings": {
-						"type": "AzureBlobFSReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					},
-					"formatSettings": {
-						"type": "DelimitedTextReadSettings"
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "new_prjt_copy_src_dataset",
+						"type": "DatasetReference"
 					}
-				}
-			},
-			{
-				"name": "checking the file",
-				"type": "Filter",
-				"dependsOn": [],
-				"userProperties": []
+				]
 			}
 		],
 		"parameters": {
