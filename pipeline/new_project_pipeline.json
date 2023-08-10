@@ -74,12 +74,6 @@
 				]
 			},
 			{
-				"name": "checking the file",
-				"type": "Filter",
-				"dependsOn": [],
-				"userProperties": []
-			},
-			{
 				"name": "copy the file to raw layer",
 				"type": "Copy",
 				"dependsOn": [
@@ -141,7 +135,17 @@
 				"outputs": [
 					{
 						"referenceName": "copy_prjt_sink_dataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_container1": {
+								"value": "@pipeline().parameters.pp_container",
+								"type": "Expression"
+							},
+							"ds_directory1": {
+								"value": "@pipeline().parameters.pp_directory",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
