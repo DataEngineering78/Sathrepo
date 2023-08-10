@@ -87,10 +87,15 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "DelimitedTextReadSettings",
+							"compressionProperties": {
+								"type": "ZipDeflateReadSettings"
+							}
 						}
 					},
 					"sink": {
