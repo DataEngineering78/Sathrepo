@@ -95,9 +95,25 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "get_prjct_dataset1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_container": {
+								"value": "@pipeline().parameters.pp_container",
+								"type": "Expression"
+							},
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_directory",
+								"type": "Expression"
+							},
+							"ds_filename": "  "
+						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems",
+						"itemName",
+						"itemType",
+						"lastModified"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
