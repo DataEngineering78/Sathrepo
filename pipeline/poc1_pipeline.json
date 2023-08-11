@@ -216,7 +216,21 @@
 							"outputs": [
 								{
 									"referenceName": "foreach_sink_dataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_container1": {
+											"value": "@pipeline().parameters.pp_container1",
+											"type": "Expression"
+										},
+										"ds_directory1": {
+											"value": "@pipeline().parameters.pp_directory1",
+											"type": "Expression"
+										},
+										"ds_filename1": {
+											"value": "@pipeline().parameters.pp_filename1",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
