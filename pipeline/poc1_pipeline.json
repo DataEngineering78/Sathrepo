@@ -273,6 +273,9 @@
 			},
 			"pp_directory1": {
 				"type": "string"
+			},
+			"pp_filename1": {
+				"type": "string"
 			}
 		},
 		"annotations": []
