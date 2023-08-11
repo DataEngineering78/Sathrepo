@@ -136,7 +136,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Copythe files to raw layer').output.pipelineReturnValue",
+						"value": "@activity('Filter the salesLTproduct ').output.pipelineReturnValue",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -159,11 +159,6 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
-										"wildcardFolderPath": {
-											"value": "@pipeline().parameters.pp_directory",
-											"type": "Expression"
-										},
-										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -200,17 +195,7 @@
 							"outputs": [
 								{
 									"referenceName": "foreach_sink_dataset",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_container": {
-											"value": "@pipeline().parameters.pp_container",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.pp_directory",
-											"type": "Expression"
-										}
-									}
+									"type": "DatasetReference"
 								}
 							]
 						}
@@ -218,14 +203,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"pp_container": {
-				"type": "string"
-			},
-			"pp_directory": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
