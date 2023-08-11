@@ -5,12 +5,20 @@
 			"referenceName": "AzureDataLakeStorage15",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ds_inputfile": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SalesLTProduct.txt",
+				"fileName": {
+					"value": "@dataset().ds_inputfile",
+					"type": "Expression"
+				},
 				"folderPath": "Unzip_output/AdventureWorksLT2012-20230801T111855Z-001.zip/AdventureWorksLT2012",
 				"fileSystem": "container3"
 			},

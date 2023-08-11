@@ -185,7 +185,13 @@
 							"inputs": [
 								{
 									"referenceName": "foreach_source_dataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_inputfile": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
