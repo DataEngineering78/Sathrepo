@@ -151,7 +151,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Filter the salesLTproduct ').output.Value",
+						"value": "@activity('Filter').output.Value",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -236,6 +236,19 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
 			}
 		],
 		"parameters": {
