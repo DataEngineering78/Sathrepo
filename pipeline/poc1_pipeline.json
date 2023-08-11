@@ -115,7 +115,7 @@
 				}
 			},
 			{
-				"name": "Filter the salesLTproduct",
+				"name": "Filter",
 				"type": "Filter",
 				"dependsOn": [
 					{
@@ -142,7 +142,7 @@
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Filter the salesLTproduct ",
+						"activity": "Filter",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -235,36 +235,6 @@
 							]
 						}
 					]
-				}
-			},
-			{
-				"name": "Notebook",
-				"type": "DatabricksNotebook",
-				"dependsOn": [
-					{
-						"activity": "filtered file",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"notebookPath": "/Users/dataengineering78@outlook.com/final_project",
-					"baseParameters": {
-						"file": "'/mnt/adlsdirectory/ADB_input/finallayer/SalesLTProduct.txt'"
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
-					"type": "LinkedServiceReference"
 				}
 			}
 		],
