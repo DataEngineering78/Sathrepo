@@ -25,14 +25,16 @@
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings",
 							"compressionProperties": {
-								"type": "ZipDeflateReadSettings"
+								"type": "ZipDeflateReadSettings",
+								"preserveZipFileNameAsFolder": false
 							}
 						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -59,7 +61,17 @@
 				"outputs": [
 					{
 						"referenceName": "poc1_sink_dataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_container": {
+								"value": "@pipeline().parameters.pp_container",
+								"type": "Expression"
+							},
+							"ds_directory": {
+								"value": "@pipeline().parameters.pp_directory",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
@@ -124,44 +136,6 @@
 						"type": "Expression"
 					}
 				}
-			},
-			{
-				"name": "get the filtered file",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Filter the salesLTproduct ",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('unzip the file').output.value",
-						"type": "Expression"
-					},
-					"isSequential": true,
-					"activities": [
-						{
-							"name": "Copy data1",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"enableStaging": false
-							}
-						}
-					]
-				}
 			}
 		],
 		"parameters": {
@@ -169,6 +143,12 @@
 				"type": "string"
 			},
 			"pp_directory": {
+				"type": "string"
+			},
+			"pp_container1": {
+				"type": "string"
+			},
+			"pp_directory1": {
 				"type": "string"
 			}
 		},
