@@ -136,7 +136,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Filter the salesLTproduct ').output.childitems",
+						"value": "@activity('Copythe files to raw layer').output.pipelineReturnValue",
 						"type": "Expression"
 					},
 					"isSequential": true,
@@ -159,6 +159,10 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": {
+											"value": "@pipeline().parameters.pp_directory",
+											"type": "Expression"
+										},
 										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
