@@ -215,53 +215,12 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DelimitedText1",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_container1": {
-											"value": "@pipeline().parameters.pp_container1",
-											"type": "Expression"
-										},
-										"ds_directory": {
-											"value": "@pipeline().parameters.pp_directory1",
-											"type": "Expression"
-										},
-										"ds_filename": {
-											"value": "@pipeline().parameters.pp_filename1",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "foreach_sink_dataset",
+									"type": "DatasetReference"
 								}
 							]
 						}
 					]
-				}
-			},
-			{
-				"name": "Notebook1",
-				"type": "DatabricksNotebook",
-				"dependsOn": [
-					{
-						"activity": "filtered file",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"notebookPath": "/Users/dataengineering78@outlook.com/poc project"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
-					"type": "LinkedServiceReference"
 				}
 			}
 		],
