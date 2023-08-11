@@ -273,13 +273,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/dataengineering78@outlook.com/poc project",
-					"baseParameters": {
-						"outputfile": {
-							"value": "@concat('/mnt/adlsdirectory/ADB_input/SalesLTProduct.txt')",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Users/dataengineering78@outlook.com/poc project"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
