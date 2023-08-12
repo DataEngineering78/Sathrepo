@@ -218,7 +218,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"ds_container1": {
-											"value": "@pipeline().parameters.pp_container1",
+											"value": "@pipeline().parameters.pp_container",
 											"type": "Expression"
 										},
 										"ds_directory1": {
