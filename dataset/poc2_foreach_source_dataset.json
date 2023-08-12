@@ -1,0 +1,32 @@
+{
+	"name": "poc2_foreach_source_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage15",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_inputfile": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().ds_inputfile",
+					"type": "Expression"
+				},
+				"folderPath": "Unzip_output/AdventureWorksLT2012-20230801T111855Z-001.zip/AdventureWorksLT2012",
+				"fileSystem": "container3"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
