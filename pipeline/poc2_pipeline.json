@@ -215,7 +215,21 @@
 							"outputs": [
 								{
 									"referenceName": "poc2_foreach_sink_dataset",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_container1": {
+											"value": "@pipeline().parameters.pp_container1",
+											"type": "Expression"
+										},
+										"ds_directory1": {
+											"value": "@pipeline().parameters.pp_directory1",
+											"type": "Expression"
+										},
+										"ds_filename1": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -231,6 +245,12 @@
 			"pp_directory": {
 				"type": "string",
 				"defaultValue": "Unzip_output"
+			},
+			"pp_container1": {
+				"type": "string"
+			},
+			"pp_directory1": {
+				"type": "string"
 			}
 		},
 		"annotations": []
