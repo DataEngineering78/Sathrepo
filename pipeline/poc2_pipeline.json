@@ -131,7 +131,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith(item().name,'SalesLTProduct')",
+						"value": "@startswith(item().name,'SalesLTProduct.txt')",
 						"type": "Expression"
 					}
 				}
@@ -272,9 +272,9 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/dataengineering78@outlook.com/final_project1",
+					"notebookPath": "/Users/dataengineering78@outlook.com/final_project",
 					"baseParameters": {
-						"file3": "/mnt/adlsdirectory/ADB_input/SalesLTProduct.txt"
+						"File1": "/mnt/adlsdirectory/ADB_input/SalesLTProduct.txt"
 					}
 				},
 				"linkedServiceName": {
