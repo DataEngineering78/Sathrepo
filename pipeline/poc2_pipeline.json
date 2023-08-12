@@ -263,7 +263,8 @@
 				"defaultValue": "Unzip_output"
 			},
 			"pp_directory1": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "ADB_input"
 			}
 		},
 		"annotations": []
