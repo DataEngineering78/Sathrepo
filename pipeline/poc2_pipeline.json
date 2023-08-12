@@ -274,7 +274,7 @@
 				"typeProperties": {
 					"notebookPath": "/Users/dataengineering78@outlook.com/final_project",
 					"baseParameters": {
-						"file": "/mnt/adlsdirectory/ADB_input/SalesLTProduct.txt"
+						"file1": "/mnt/adlsdirectory/ADB_input/SalesLTProduct.txt"
 					}
 				},
 				"linkedServiceName": {
