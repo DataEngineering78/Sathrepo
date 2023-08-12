@@ -77,10 +77,12 @@
 		],
 		"parameters": {
 			"pp_container": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "container3"
 			},
 			"pp_directory": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Unzip_output"
 			}
 		},
 		"annotations": []
