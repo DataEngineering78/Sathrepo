@@ -129,7 +129,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get the files in unzip folder').output.childItems",
+						"value": "@activity('Get the files in unzip folder').output.pipelineReturnValue",
 						"type": "Expression"
 					},
 					"condition": {
