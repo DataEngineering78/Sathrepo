@@ -255,6 +255,10 @@
 			"pp_directory1": {
 				"type": "string",
 				"defaultValue": "ADB_input"
+			},
+			"pp_filename": {
+				"type": "string",
+				"defaultValue": "finallayer"
 			}
 		},
 		"annotations": []
